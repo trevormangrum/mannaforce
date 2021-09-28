@@ -1,43 +1,34 @@
-# Trees Knoxville
-Interactive map for the Trees Knoxville organization.
-## Tech Stack
-**Frontend:** Next.js/React
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-**Backend**: MongoDB, Next.js, Google Maps,
+## Getting Started
 
-**Testing**: Jest
+First, run the development server:
 
-## Dependencies
-yarn (package manager simliar to npm)
+```bash
+npm run dev
+# or
+yarn dev
+```
 
-## How to Run
-1. Clone the repository.
-2. Run `yarn` or `yarn install` to install/update
-3. Run yarn dev for development mode with hot-code reloading, error reporting, and more.
-4. Open http://localhost:3000 with your web browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Note: Running yarn build then yarn start will start the application in production mode.
-## Tools Used
-* Jira for issue tracking
-* Figma for mockups
-* Confluence for formal documents
-## Code/PR Workflow
-* Create a new branch in the format `[GITHUB_USERNAME]/TKW-[JIRA ISSUE NUMBER]-[SHORT_DESCRIPTION]` by running `git checkout -b [BRANCH NAME]`
-  * This way the issues are closed on Jira when we merge the PR with that branch name
-### Example Branch
-    rluberto/TKW-12-init-project
+You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
 
-* Be sure to lint, format, and type-check your code occasionally to catch errors by running `yarn lint`.
-* Commit changes.
-* Then push your branch by running `git push -u origin [BRANCH NAME]`. This pushes your branch to remote.
-* Create a pull request (PR) on GitHub to merge your branch into `develop`. `main` will serve as production.
-* In your PR, briefly describe the changes, then tag Trevor (trevormangrum) and Ray (rluberto) to the PR. Others are welcome to comment and give feedback as well.
+[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
 
-## Project Structure
-* `src/components/`: Contains most of our front-end code. This is where we put our React components.
-* `src/pages/`: Contains files that are associated with a route based on its file name. For more information, see Next.js' [docs](https://nextjs.org/docs/basic-features/pages).
-* `public/`: Stores static files like images, see Next.js' [docs](https://nextjs.org/docs/basic-features/static-file-serving).
-* `tst/`: Contains files for testing backend code.
-* `server/`: Contains almost all of our backend code. This is where we put our business logic. 
-* `utils/`: For code used across root directories.
-* `styles/`: Contains our SCSS files for global styling, variables, and mixins.
+The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
