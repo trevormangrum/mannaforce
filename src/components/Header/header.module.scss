@@ -1,0 +1,14 @@
+@use 'variables' as vars;
+.navigation {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: red;
+}
+.navLink {
+    text-decoration:none;
+    font-family: vars.$font-primary;
+}
+.linkCollection {
+    margin-left: auto;
+}
