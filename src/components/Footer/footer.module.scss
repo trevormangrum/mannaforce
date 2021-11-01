@@ -1,0 +1,39 @@
+@use 'variables' as vars;
+.footer {
+    display:flex;
+    flex-direction:column;
+  margin-top: auto;
+  height: 300px;
+  background: vars.$primary;
+  font-family: vars.$font-primary;
+}
+
+.footerSection {
+  color: white;
+  display:flex;
+  flex-direction:row;
+  & > div {
+     &:nth-child(2) {
+         margin-left: auto;
+     }
+      & > h2 {
+          text-transform: uppercase; 
+      }
+  }
+  &:nth-child(2) {
+      margin-top: auto;
+      height: 30px;
+      & > span > a {
+          color:white;
+          font-weight: 500;
+      }
+  }
+}
+
+.wrapper {
+    display:flex;
+    flex-direction:column;
+    width: 90%;
+    height: 100%;
+    align-self:center;
+}

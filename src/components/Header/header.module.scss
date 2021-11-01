@@ -1,14 +1,40 @@
 @use 'variables' as vars;
+@use 'sass:color';
 .navigation {
     width: 100%;
     display: flex;
-    flex-direction: row;
-    background: red;
+    flex-direction: column;
+    font-family: vars.$font-primary;
+}
+.wrapper {
+    width: 90%;
+    align-self:center;
+    display:flex;
+    flex-direction:row;
 }
 .navLink {
     text-decoration:none;
+    margin: 0px 5px;
     font-family: vars.$font-primary;
+    font-weight: 500;
+}
+.navActionButton {
+    background: vars.$primary;
+    color:white;
+    text-decoration:none;
+    margin-left: 10px;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    &:hover {
+        background: color.scale(vars.$primary, $lightness: -20%);
+    }
+
 }
 .linkCollection {
+    display: flex;
+    flex-direction: row;
+    align-items:center;
     margin-left: auto;
 }
