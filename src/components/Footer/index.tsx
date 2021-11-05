@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./footer.module.scss";
+import urls from "utils/urls";
 
 const Footer: React.FC = () => {
   return (
@@ -8,12 +9,11 @@ const Footer: React.FC = () => {
         <section className={styles.footerSection}>
           <div>
             <h2>Manna Force</h2>
-            <a href="#">Home</a>
-            <a href="#">About Us</a>
-            <a href="#">Contact Us</a>
-            <a href="#">Testimonials</a>
-            <a href="#">Blog</a>
-            <a href="#">Donate</a>
+              { urls.links && (
+                  Object.keys(urls.links).map(obj => {
+                  return <a href={urls.links[obj].path}>{urls.links[obj].pathName}</a>
+                  })
+              )}
           </div>
           <div>
             <h2>Contact</h2>

@@ -12,6 +12,7 @@
     "lint:eslint": "eslint '**/*.{tsx,ts,js,jsx,json}' --fix"
   },
   "dependencies": {
+    "@types/react-icons": "^3.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.24.2",
     "eslint-plugin-jsx-a11y": "^6.4.1",
@@ -26,6 +27,7 @@
     "prettier": "^2.4.1",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-icons": "^4.3.1",
     "sass": "^1.43.4",
     "ts-jest": "^27.0.5",
     "ts-node": "^10.2.1"
