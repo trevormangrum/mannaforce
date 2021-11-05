@@ -1,0 +1,110 @@
+@use 'variables' as vars;
+@use 'sass:color';
+.navigation {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    font-family: vars.$font-primary;
+    position:relative;
+}
+.wrapper {
+    position:relative;
+    width: 90%;
+    align-self:center;
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+}
+.navLink {
+    text-decoration:none;
+    margin: 0px 5px;
+    font-family: vars.$font-primary;
+    font-weight: 500;
+}
+.logo {
+    & > img {
+        width: 150px;
+        height:100px;
+    }
+    @include vars.respond-to("medium") {
+        & > img {
+            width: 200px;
+            height: 100px;
+        }
+    }
+    z-index: 1001;
+}
+.navActionButton {
+    background: vars.$primary;
+    color:white;
+    text-decoration:none;
+    margin-left: 10px;
+    padding: 1rem;
+    border-radius: 10px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    &:hover {
+        background: color.scale(vars.$primary, $lightness: -20%);
+    }
+
+}
+.linkCollection {
+    display:none;
+    @include vars.respond-to("medium") {
+        display:flex;
+        flex-direction: row;
+        align-items:center;
+        margin-left: auto;
+    }
+}
+
+.navMenuButton {
+    margin-left: auto;
+    font-size: 32px;
+    z-index: 1001;
+    cursor:pointer;
+    @include vars.respond-to("medium") {
+        display: none;
+    }
+}
+
+.mobileNav {
+    position:absolute;
+    width:100%;
+    display: flex;
+    flex-direction:column;
+    height:100vh;
+    background: white;
+    transition:0.4s ease;
+    z-index: 1000;
+    @include vars.respond-to("medium") {
+        display:none;
+    }
+}
+.mobileNavContent {
+    margin-top: 130px;
+    width:90%;
+    align-self:center;
+    text-align:right;
+    font-family: vars.$font-primary;
+    display:flex;
+    flex-direction:column;
+    & > a:nth-child(6) {
+        margin-top: 20px;
+        text-align:center;
+    }
+}
+.mobileNavLink {
+    color: vars.$primary;
+    display: flex;
+    font-size: 20px;
+    flex-direction:column;
+    text-decoration:none;
+}
+
+.show {
+    right: 0;
+}
+.hide {
+    right: -100%;
+}

@@ -1,5 +1,9 @@
 import React from "react";
-
+import Layout from "src/components/Layout";
 export default function HomePage() {
-  return <h1>Welcome to Mannaforce!</h1>;
+  return (
+    <Layout>
+        <h1>Hello world!</h1>
+    </Layout>
+  );
 }
