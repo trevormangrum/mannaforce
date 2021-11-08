@@ -9,6 +9,17 @@
     z-index:1000;
     background:transparent;
     font-family: vars.$font-primary;
+    &.withBg::before {
+        content: "";
+        //Thanks H4I Website: https://github.com/hack4impact/hack4impact-website/blob/main/components/shared/Nav/styles.module.scss
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: rgba(white, 0.3);
+        backdrop-filter: blur(8px);
+      }
 }
 .wrapper {
     position:relative;

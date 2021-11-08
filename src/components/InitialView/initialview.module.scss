@@ -5,7 +5,9 @@
     width:100%;
     min-height: 700px;
     background: url("../../../public/initview.png");
-    background-position-y: -20px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50% 50%;
     position:relative;
     z-index: 100;
     display:flex;

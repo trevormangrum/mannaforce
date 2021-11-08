@@ -1,0 +1,26 @@
+@use 'variables' as vars;
+
+.container {
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    flex-direction:column;
+    font-family: vars.$font-primary;
+}
+
+.wrapper {
+    width: 90%;
+    align-self:center;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    & > h2 {
+        color: vars.$primary;
+    }
+}
+.testimonialGrid {
+    width: 100%;
+    justify-items: center;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
