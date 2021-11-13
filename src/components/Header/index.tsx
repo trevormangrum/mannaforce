@@ -2,7 +2,7 @@ import React from "react";
 import styles from "./header.module.scss";
 import { FiMenu } from "react-icons/fi";
 import urls from "utils/urls";
-import useHasScrolledDown from "utils/scrolledDown";
+import useHasScrolledDown from "utils/ScrolledDown";
 import {useRouter} from "next/router";
 import MobileNav from "src/components/MobileNav";
 const Header: React.FC = () => {

@@ -1,0 +1,20 @@
+@use 'variables' as vars;
+
+.container {
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    font-family: vars.$font-primary;
+}
+.wrapper {
+    width: 90%;
+    display:flex;
+    flex-direction: column;
+    align-self:center;
+    & > h2, & > span > strong {
+        color: vars.$primary;
+    }
+    & > p, & > span {
+        color: #8d8d8d;
+    }
+}
