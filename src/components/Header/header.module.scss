@@ -36,6 +36,12 @@
     font-weight: 600;
     color:white;
 }
+.navLinkGreen {
+    color: vars.$primary;
+}
+.navLinkWhite {
+    color:white;
+}
 .logo {
     & > img {
         width: 150px;
@@ -122,4 +128,10 @@
 }
 .hide {
     right: -100%;
+}
+
+.navSpacer {
+    width: 100%;
+    display:block;
+    height: 104px;
 }
