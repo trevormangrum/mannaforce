@@ -34,6 +34,16 @@ const Header: React.FC = () => {
                       {urls.links[obj].pathName}
                     </a>
                   );
+
+                if(obj == "contact") 
+                  return (
+                    <a
+                      className={`${styles.navLink} ${router.pathname != '/' ? styles.navLinkGreen : ""} ${hasScrolledDown ? styles.navLinkWhite : ""}`}
+                      href="mailto:ervinshena@yahoo.com"
+                    >
+                      {urls.links[obj].pathName}
+                    </a>
+                  );
                 return (
                   <a className={`${styles.navLink} ${router.pathname != '/' ? styles.navLinkGreen : ""} ${hasScrolledDown ? styles.navLinkWhite : ""}`} href={urls.links[obj].path}>
                     {urls.links[obj].pathName}
