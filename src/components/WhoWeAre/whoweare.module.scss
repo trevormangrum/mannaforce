@@ -24,9 +24,11 @@
     }
     & > p {
         color: #8d8d8d;
+        max-width: 600px;
     }
     & > a {
         color: white;
+        width: 200px;
         margin-top: auto;
         background: vars.$primary;
         border-radius: 10px;

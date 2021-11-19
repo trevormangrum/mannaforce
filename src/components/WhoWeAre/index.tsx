@@ -6,7 +6,7 @@ const WhoWeAre: React.FC = () => {
       <div className={styles.wrapper}>
         <div className={styles.content}>
           <h2>Who We Are</h2>
-          <p>Write something about us here...</p>
+          <p>Manna Force is a Not for Profit movement that is committed to bringing the truth of addiction to light. We strive to give families and individuals who suffer from its destruction the answers they need to be restored completely to a productive and fulfilling life.</p>
           <a href="/about">About Us</a>
         </div>
         <div className={styles.image}>
