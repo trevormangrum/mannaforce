@@ -16,29 +16,21 @@
         color: vars.$primary;
         margin: 40px 0;
     }
-}
-
-.cardGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    justify-items:center;
-}
-
-
-.card {
-    width: 300px;
-    min-height: 300px;
-    border-radius: 10px;
-    box-shadow: 3px 3px 12px rgba(0,0,0,0.2);
-    display: flex;
-    flex-direction:column;
-    & > h3 {
-        width: 90%;
-        align-self:center;
-        text-align:center;
-        color: vars.$primary;
+    & > ol {
+        counter-reset: h3 0;
+        & > li {
+            display:block;
+        }
+        & > li > h3::before {
+            counter-increment: h3;
+            content: counter(h3) ".";
+            color: vars.$primary;
+            font-weight: bold;
+            margin-right: 10px;
+        }
     }
-
 }
 
-
+.directive {
+    color: vars.$primary;
+}
