@@ -11,7 +11,6 @@ export default function BlogPage() {
             </Head>
             <h1>Our Blog</h1>
             <BlogPosts/>
-            <a href="/api/auth/login">test</a>
             <style jsx>{`
             h1 {
                 text-transform: uppercase;

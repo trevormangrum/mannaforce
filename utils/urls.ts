@@ -16,10 +16,10 @@ export default {
             pathName: "Blog",
             path: "/blog",
         },
-        testimonials: {
+/*         testimonials: {
             pathName: "Testimonials",
             path: "/testimonials",
-        },
+        }, */
         donate: {
             pathName: "Donate",
             path: "/donate",
