@@ -10,8 +10,8 @@ const MobileNav: React.FC<Props> = ({mobileNavVisible}) => {
             <div className={styles.mobileNavContent}>
                 { urls.links && (
                     Object.keys(urls.links).map(obj => {
-                    if(obj == "donate") return <a className={styles.navActionButton} href={urls.links[obj].path}>{urls.links[obj].pathName}</a>
-                    return <a className={styles.mobileNavLink} href={urls.links[obj].path}>{urls.links[obj].pathName}</a>
+                    if(obj == "donate") return <a key={obj} className={styles.navActionButton} href={urls.links[obj].path}>{urls.links[obj].pathName}</a>
+                    return <a key={obj} className={styles.mobileNavLink} href={urls.links[obj].path}>{urls.links[obj].pathName}</a>
                     })
                 )}
             </div>
