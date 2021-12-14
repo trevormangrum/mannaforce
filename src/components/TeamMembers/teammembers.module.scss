@@ -10,7 +10,8 @@
 }
 
 .wrapper {
-    width: 90%;
+    max-width: 1200px;
+    width: 100%;
     align-self:center;
     & > h2 {
         text-align: center;

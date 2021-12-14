@@ -1,0 +1,45 @@
+@use 'variables' as vars;
+@use 'sass:color';
+.container {
+    width: 100%;
+    max-width: 1200px;
+    display:flex;
+    flex-direction:column;
+    align-self:center;
+    & > label {
+        color: vars.$primary;
+        font-weight: bold;
+        margin: 5px 0;
+    }
+    & > input, textarea {
+        font-family: vars.$font-primary;
+        padding: 0.5rem;
+        border: 1px solid #e3e3e3;
+        box-shadow: 0px 0px 3px rgba(0,0,0,0.2);
+
+    }
+    & > button {
+        font-family: vars.$font-primary;
+        border: none;
+        outline:none;
+        margin: 20px 0;
+        background: vars.$primary;
+        color:white;
+        font-weight:bold;
+        padding: 1.5rem;
+        border-radius: 10px;
+        transition: 0.3s ease;
+        cursor:pointer;
+        &:hover{
+            transform: translateY(-2px); 
+            background: color.scale(vars.$primary, $lightness: -20%);
+        }
+    }
+
+}
+
+.title {
+    text-transform: uppercase;
+    color: #11552E;
+    text-align:center;
+}

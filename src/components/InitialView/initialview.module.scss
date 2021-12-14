@@ -24,7 +24,8 @@
 }
 
 .wrapper {
-    width: 90%;
+    width: 100%;
+    max-width:1200px;
     z-index: 101;
     align-self:center;
     font-family: vars.$font-primary;

@@ -1,0 +1,36 @@
+@use 'variables' as vars;
+@use 'sass:color';
+.container {
+    width: 100%;
+    font-family: vars.$font-primary;
+    max-height: 400px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 3px #e3e3e3;
+    display:flex;
+    padding: 0.5rem 1rem;
+    flex-direction:column;
+}
+.title {
+    color: vars.$primary;
+    margin-bottom: 0;
+}
+.date {
+    color: #8d8d8d;
+}
+
+.viewPostBtn {
+    color:white;
+    font-weight:bold;
+    text-decoration:none;
+    padding: 0.5rem;
+    background: vars.$primary;
+    max-width: 120px;
+    text-align:center;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    cursor: pointer;
+    &:hover {
+        transform: translateY(-2px); 
+        background: color.scale(vars.$primary, $lightness: -20%);
+    }
+}
