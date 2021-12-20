@@ -1,6 +1,6 @@
 export interface BlogPost {
-    sys: {
-        id: string;
+    sys?: {
+        id?: string;
     }
     title: string;
     author: string;
