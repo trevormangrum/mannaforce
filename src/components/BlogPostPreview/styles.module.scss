@@ -18,7 +18,11 @@
     color: #8d8d8d;
 }
 
-.viewPostBtn {
+.buttons {
+    width: 100%;
+    display:flex;
+}
+.viewPostBtn, .deleteBtn {
     color:white;
     font-weight:bold;
     text-decoration:none;
@@ -32,5 +36,14 @@
     &:hover {
         transform: translateY(-2px); 
         background: color.scale(vars.$primary, $lightness: -20%);
+    }
+}
+.deleteBtn {
+    background: red;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    &:hover {
+        background: color.scale(red, $lightness: -20%);
     }
 }

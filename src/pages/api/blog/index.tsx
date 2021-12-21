@@ -35,6 +35,7 @@ export default withApiAuthRequired(async function handler(req: NextApiRequest, r
             return;
         } else if (req.method === "DELETE") {
             //Delete a blog post
+            console.log(req.query.id);
             res.status(200).json({
                 payload: {},
             });
