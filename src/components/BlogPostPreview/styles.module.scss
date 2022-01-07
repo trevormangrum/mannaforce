@@ -9,6 +9,7 @@
     display:flex;
     padding: 0.5rem 1rem;
     flex-direction:column;
+    margin: 20px 0px;
 }
 .title {
     color: vars.$primary;
@@ -22,7 +23,7 @@
     width: 100%;
     display:flex;
 }
-.viewPostBtn, .deleteBtn {
+.viewPostBtn, .deleteBtn, .updateBtn {
     color:white;
     font-weight:bold;
     text-decoration:none;
@@ -46,4 +47,14 @@
     &:hover {
         background: color.scale(red, $lightness: -20%);
     }
+}
+.updateBtn {
+    background: blue;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    &:hover {
+        background: color.scale(blue, $lightness: -20%);
+    }
+
 }

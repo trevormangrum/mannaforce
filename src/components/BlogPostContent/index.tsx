@@ -17,7 +17,6 @@ const BlogPostContent: React.FC<Props> = ({post}) => {
             <h1>{post && post.title}</h1>
             <p>{date}</p>
             <p>{post && post.author}</p>
-            <p>{post && post.text}</p>
         </div>
     )
 }

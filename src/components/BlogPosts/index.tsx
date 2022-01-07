@@ -6,21 +6,18 @@ import queries from "server/actions/Contentful/queries";
 import BlogPostPreview from "src/components/BlogPostPreview";
 import { BlogPost } from "utils/types";
 interface Props {
-   admin?: boolean; 
+   method?: string; 
 }
-const BlogPosts: React.FC<Props> = ({admin}) => {
+const BlogPosts: React.FC<Props> = ({method}) => {
     const {data: postData, loading: postLoading, error: postError } = useQuery(queries.blogPosts.getAllPosts, {
         client: client,
         pollInterval: 360000,
     })
-    if(postData) {
-        console.log(postData);
-    }
     return (
         <div className={styles.container}>
             {postData && !postLoading && !postError && (
                 postData.blogPostCollection.items.map((post: BlogPost) => {
-                    return <BlogPostPreview post={post} admin={admin} />
+                    return <BlogPostPreview post={post} method={method} />
                 })
             )}
         </div>

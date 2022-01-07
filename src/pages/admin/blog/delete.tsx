@@ -6,7 +6,7 @@ export default withPageAuthRequired(function DeleteBlogPostPage() {
     return(
         <Layout>
             <h1>Delete Blog Post</h1>
-            <BlogPosts admin={true}/>
+            <BlogPosts method="delete"/>
 
             <style jsx>{`
             h1 {

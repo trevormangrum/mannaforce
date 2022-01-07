@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./styles.module.scss";
 import dynamic from "next/dynamic";
 import { Delta, Sources } from "quill";
+import { BlogPost } from "utils/types";
 const ReactQuill = dynamic(import("react-quill"), { ssr: false });
 
 interface IFormValues {
@@ -12,10 +13,12 @@ interface IFormValues {
     error?: boolean | undefined;
     [key: string]: string | null | boolean | undefined;
 }
+interface Props {
+    post?: BlogPost;
+}
 
-
-const CreateBlogPostForm: React.FC = () => {
-    const [values, setValues] = React.useState({} as IFormValues); //Used to store the various values that will be sent to the backend.
+const CreateBlogPostForm: React.FC<Props> = ({post}) => {
+    const [values, setValues] = React.useState(post); //Used to store the various values that will be sent to the backend.
     const[loading, setLoading] = React.useState(false);
     const handleSubmit = async (e: React.SyntheticEvent) => {
         //There's no way to put a required tag on the quill editor, so we just check to make sure there's input in it before submitting.
@@ -40,7 +43,7 @@ const CreateBlogPostForm: React.FC = () => {
             } 
         }
         const response = await fetch("/api/blog", {
-            method: "POST",
+            method: "PATCH",
             body: fd,
         });
         if(response.status == 200) {
@@ -74,13 +77,15 @@ const CreateBlogPostForm: React.FC = () => {
 
     return (
         <form className={styles.container}>
-            <h1 className={styles.title}>Create Blog Post</h1>
+            {!post && 
+            <h1 className={styles.title}>Create Blog Post</h1>}
+            {post && <h1 className={styles.title}>Update Blog Post</h1>}
             <label htmlFor="title">Title</label>
             <input type="text" name="title" placeholder="Post title" onChange={handleData} value={values.title || ""}/>
             <label htmlFor="author">Author</label>
             <input type="text" name="author" placeholder="Author" onChange={handleData} value={values.author || ""}/>
             <label htmlFor="text">Post Content</label>
-            <ReactQuill theme="snow" className={styles.editor} placeholder="Please type your blog post here..." onChange={handleChange}/>
+            <ReactQuill theme="snow" className={styles.editor} placeholder="Please type your blog post here..." onChange={handleChange} defaultValue={values.text}/>
             {values.error && (
                 <p>Please fill out the blog post body.</p>
             )}
