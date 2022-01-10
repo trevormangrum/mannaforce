@@ -20,6 +20,9 @@ export default {
         query getPostById($id: String!) {
             blogPostCollection(where: {sys: {id: $id}}, limit: 1) {
                 items {
+                    sys {
+                        id
+                    }
                     title
                     author
                     date

@@ -6,6 +6,7 @@ import { BlogPost } from "utils/types";
 const ReactQuill = dynamic(import("react-quill"), { ssr: false });
 
 interface IFormValues {
+    id?: string | undefined;
     title?: string | undefined;
     author?: string | undefined;
     text: string | undefined;
@@ -18,8 +19,13 @@ interface Props {
 }
 
 const CreateBlogPostForm: React.FC<Props> = ({post}) => {
-    const [values, setValues] = React.useState(post); //Used to store the various values that will be sent to the backend.
-    const[loading, setLoading] = React.useState(false);
+    const [values, setValues] = React.useState({
+        id: post?.sys?.id,
+        title: post?.title,
+        author: post?.author,
+        text: post?.text
+    } as IFormValues); //Used to store the various values that will be sent to the backend.
+    const [loading, setLoading] = React.useState(false);
     const handleSubmit = async (e: React.SyntheticEvent) => {
         //There's no way to put a required tag on the quill editor, so we just check to make sure there's input in it before submitting.
         e.preventDefault();
@@ -43,7 +49,7 @@ const CreateBlogPostForm: React.FC<Props> = ({post}) => {
             } 
         }
         const response = await fetch("/api/blog", {
-            method: "PATCH",
+            method: post ? "PATCH" : "POST",
             body: fd,
         });
         if(response.status == 200) {
@@ -62,6 +68,7 @@ const CreateBlogPostForm: React.FC<Props> = ({post}) => {
             }));
         }
     };
+
     //From mindversity: https://github.com/hack4impact-utk/mindversity-website/blob/develop/components/CreateJournalEntry/index.tsx
     const handleChange = (content: string, delta: Delta, source: Sources, editor: any) => {
         //If the editor is empty, the only thing in it is a newline character. We don't want to send just newlines to the backend, so we do this.
@@ -89,7 +96,12 @@ const CreateBlogPostForm: React.FC<Props> = ({post}) => {
             {values.error && (
                 <p>Please fill out the blog post body.</p>
             )}
-            <button className={styles.submitBtn} onClick={handleSubmit}>Create Blog Post</button>
+            {!post && 
+                <button className={styles.submitBtn} onClick={handleSubmit}>Create Blog Post</button>
+            }
+            {post &&  
+                <button className={styles.submitBtn} onClick={handleSubmit}>Update Blog Post</button>
+            }
             {values.submissionError && (
                 <p>There was an error submitting your post. Please try again.</p>
             )}
