@@ -1,4 +1,5 @@
 export default {
+    baseUrl: process.env.NODE_ENV === "production" ? "https://mannaforce.org" : "http://localhost:3000",
     links: {
         home: {
             pathName: "Home",

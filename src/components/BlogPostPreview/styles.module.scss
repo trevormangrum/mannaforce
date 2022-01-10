@@ -9,6 +9,7 @@
     display:flex;
     padding: 0.5rem 1rem;
     flex-direction:column;
+    margin: 20px 0px;
 }
 .title {
     color: vars.$primary;
@@ -18,7 +19,11 @@
     color: #8d8d8d;
 }
 
-.viewPostBtn {
+.buttons {
+    width: 100%;
+    display:flex;
+}
+.viewPostBtn, .deleteBtn, .updateBtn {
     color:white;
     font-weight:bold;
     text-decoration:none;
@@ -33,4 +38,23 @@
         transform: translateY(-2px); 
         background: color.scale(vars.$primary, $lightness: -20%);
     }
+}
+.deleteBtn {
+    background: red;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    &:hover {
+        background: color.scale(red, $lightness: -20%);
+    }
+}
+.updateBtn {
+    background: blue;
+    border: none;
+    outline: none;
+    margin-left: auto;
+    &:hover {
+        background: color.scale(blue, $lightness: -20%);
+    }
+
 }
